@@ -5,7 +5,7 @@ const URL = "https://onlinelibrary.wiley.com/action/doLogin?societyURLCode=";
 
 test.only('Verify the user login process on onlinelibrary.wiley.com ', async ({ page }: { page: Page }) => {
   //navigate to the login page
-  await page.goto(URL);
+  await page.goto(URL, { waitUntil: 'domcontentloaded' );
 
   //fill in the login credentials
   await page.fill('input[name="login"]', 'wijesooriyamoshadi@gmail.com');
